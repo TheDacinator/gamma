@@ -18,7 +18,7 @@ else
 end
 local _, plrs = commands.testfor("@a")
 for i = 1,#plrs do
-    gadd(string.sub(plrs[i],7))
+    gcmd.gadd(string.sub(plrs[i],7))
 end
 if not gamma.shops then
     gamma.shops = {}
