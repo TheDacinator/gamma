@@ -23,4 +23,4 @@ end
 if not gamma.shops then
     gamma.shops = {}
 end
-gsave()
+gcmd.gsave()
