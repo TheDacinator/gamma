@@ -12,15 +12,22 @@ gcmd.gadd = function(name)
   end
 end
 if bagelBot.getPersistence("gamma") then
-    gamma = bagelBot.getPersistence("gamma")
+  gamma = bagelBot.getPersistence("gamma")
 else
-    gamma = {["default"]=100,["lastLogins"]={}}
+  gamma = {["default"]=100,["lastLogins"]={}}
 end
 local _, plrs = commands.testfor("@a")
 for i = 1,#plrs do
-    gcmd.gadd(string.sub(plrs[i],7))
+  gcmd.gadd(string.sub(plrs[i],7))
 end
 if not gamma.shops then
-    gamma.shops = {}
+  gamma.shops = {}
 end
 gcmd.gsave()
+gcmd.patch = function(o)
+  local name,command = o()
+  table.insert(command,1,"placeholder")
+  return gcmd.usecoins,gcmd.gcoins,gcmd.gsave,gcmd.gadd,name,command
+end
+--Use to make porting commands easier
+--local usecoins,gcoins,gsave,gadd,name,command = gcmd.patch(bagelBot.out())
