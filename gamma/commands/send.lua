@@ -1,17 +1,17 @@
-local name,command = bagelBot.out()
-if #command ~= 3 then
-    bagelBot.tell(name,"&6Invalid syntax")
-elseif not gamma[command[2]] then
-    bagelBot.tell(name,"&6Player is not in the database")
-elseif not tonumber(command[3]) or math.floor(tonumber(command[3])) ~= tonumber(command[3]) then
-    bagelBot.tell(name,"&6Invalid number amount")
-elseif tonumber(command[3]) < 0 then
-    bagelBot.tell(name,"&6Amount cannot be negative")
-elseif tonumber(command[3]) > gamma[name] then
-    bagelBot.tell(name,"&6Insufficient funds")
+local usecoins,gcoins,gsave,gadd,name,command = gcmd.patch(bagelBot.out())
+if #command ~= 4 then
+    tell(name,badsyntax)
+elseif not gamma[command[3]] then
+    tell(name,"&6Player is not in the database")
+elseif not tonumber(command[4]) or math.floor(tonumber(command[4])) ~= tonumber(command[4]) then
+    tell(name,"&6Invalid number amount")
+elseif tonumber(command[4]) < 0 then
+    tell(name,"&6Amount cannot be negative")
+elseif tonumber(command[4]) > gamma[name] then
+    tell(name,"&6Insufficient funds")
 else
-    gamma[name] = gamma[name] - tonumber(command[3])
-    gamma[command[2]] = gamma[command[2]] + tonumber(command[3])
-    bagelBot.tell(name,"&6"..command[3].."g sent to "..command[2])
+    gamma[name] = gamma[name] - tonumber(command[4])
+    gamma[command[3]] = gamma[command[3]] + tonumber(command[4])
+    tell(name,"&6"..command[4].."g sent to "..command[3])
     gsave()
 end
