@@ -1,4 +1,4 @@
-local usecoins,gcoins,gsave,gadd,name,command = gcmd.patch(bagelBot.out())
+local usecoins,gcoins,gsave,gadd,name,command = gcmd.patch(bagelBot.out)
 if os.epoch("utc") >= gamma.lastLogins[name] + 86400000 then
   gamma.lastLogins[name] = os.epoch("utc")
   gamma[name] = gamma[name] + 10
