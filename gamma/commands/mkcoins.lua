@@ -1,4 +1,4 @@
-local usecoins,gcoins,gsave,gadd,name,command = gcmd.patch(bagelBot.out())
+local usecoins,gcoins,gsave,gadd,name,command = gcmd.patch(bagelBot.out)
 if not usecoins then
     tell(name,"&6Coin commands are disabled")
 elseif #command ~= 3 then
