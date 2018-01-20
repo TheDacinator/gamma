@@ -30,4 +30,4 @@ gcmd.patch = function(o)
   return gcmd.usecoins,gcmd.gcoins,gcmd.gsave,gcmd.gadd,name,command
 end
 --Use to make porting commands easier
---local usecoins,gcoins,gsave,gadd,name,command = gcmd.patch(bagelBot.out())
+--local usecoins,gcoins,gsave,gadd,name,command = gcmd.patch(bagelBot.out)
