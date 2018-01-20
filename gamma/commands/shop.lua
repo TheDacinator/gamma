@@ -1,4 +1,4 @@
-local usecoins,gcoins,gsave,gadd,name,command = gcmd.patch(bagelBot.out())
+local usecoins,gcoins,gsave,gadd,name,command = gcmd.patch(bagelBot.out)
 if command[2] == "create" then
   if #command ~= 6 and #command ~= 7 then
     tell(name,badsyntax)
