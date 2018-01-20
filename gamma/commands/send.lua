@@ -1,4 +1,4 @@
-local usecoins,gcoins,gsave,gadd,name,command = gcmd.patch(bagelBot.out())
+local usecoins,gcoins,gsave,gadd,name,command = gcmd.patch(bagelBot.out)
 if #command ~= 4 then
     tell(name,badsyntax)
 elseif not gamma[command[3]] then
